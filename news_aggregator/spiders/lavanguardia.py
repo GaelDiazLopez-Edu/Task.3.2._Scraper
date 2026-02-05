@@ -9,7 +9,7 @@ class LaVanguardiaSpider(scrapy.Spider):
             title = article.css('h1 a::text, h2 a::text, h3 a::text').get()
             if title:
                 yield {
-                    'title': title.strip(), # Limpieza [cite: 133]
+                    'title': title.strip(), # Limpieza
                     'link': response.urljoin(article.css('a::attr(href)').get()),
-                    'source': 'La Vanguardia' # Identificador [cite: 134]
+                    'source': 'La Vanguardia' # Identificador
                 }
